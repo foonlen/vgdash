@@ -3098,7 +3098,7 @@ body.dark .search.active .search__input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 
 .notifications__user {
@@ -3119,7 +3119,7 @@ body.dark .search.active .search__input {
 .notifications__time {
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 .notifications__project {
@@ -7754,6 +7754,10 @@ body.dark .dashboard_roadmap .dash_back {
 body.dark .wallet_dash_block, body.dark .dash_back {
   box-shadow: 0 0 35px rgb(17 17 17 / 60%);
   background-color: #242731;
+}
+
+{
+  
 }
 
 @media only screen and (max-width: 1339px) and (max-width: 767px) {

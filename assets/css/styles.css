@@ -317,7 +317,7 @@ footer .copyright a {
 }
 
 .dash_back {
-  background-color: #fff;
+  background-color: #1c1c28;
   border-radius: 5px;
   box-shadow: none;
   padding: 1px 15px;
@@ -366,13 +366,18 @@ footer .copyright a {
 }
 
 .dashboard_block_quicklinks h4 {
-    font-weight: 800;
-    font-size: 16px;
+  font-weight: 800;
+  font-size: 16px;
+  color: #fff;
 }
 
 .dashboard_block_quicklinks img {
     width: 40px;
     margin-top: 3px;
+}
+
+.dashboard_block_quicklinks h6 {
+  color: #888;
 }
 
 .vg-primary-btn {
