@@ -1,0 +1,1171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="https://virgo.fund/img/favicon.png" property=""/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://virgo.fund/assets/country/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+<link rel="stylesheet" type="text/css" href="assets/css/dash-styles.css">
+<link rel="stylesheet" media="all" href="assets/css/app.css">
+
+<style>
+    .modal-title
+    {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+</style>  <style>
+  .error
+  {
+      color:red;
+  }
+      .verify-status 
+      {
+          color: blue;
+        font-size: 11px;
+        font-weight: 500;
+      }
+      .email-verify-alert
+      {
+          margin-top:10px;
+      }
+  </style>
+</head>
+<body>
+    <!-- menu bar -->
+    <style>
+@media(min-width: 768px) {
+  #myNavbar .navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  #myNavbar .nav .open>a,#myNavbar .nav .open>a:focus,#myNavbar .nav .open>a:hover {
+    background-color: transparent;
+  }
+
+  #myNavbar .dropdown-menu {
+    background: linear-gradient(to bottom, #0e0b29, #2b2373);
+    margin-top: 10px;
+  }
+
+  #myNavbar .dropdown-menu li a {
+    color: #fff;
+  }
+
+  #myNavbar .dropdown-menu>li>a:focus,#myNavbar .dropdown-menu>li>a:hover {
+    background-color: #0e1838;
+  }
+  
+    .download_app {
+        background-color: #29216e;
+        padding: 8px 20px 6px !important;
+        color: #fff;
+        box-shadow: 0 0 15px #000;
+        border-radius: 5px;
+    }
+    
+    .menu_top_level {
+        background: #0e0b2a;
+        border-bottom: 1px solid #29216e;
+    }
+    
+    .menu_top_level h5 {
+        text-align: right;
+    }
+    
+    .menu_top_level h5 a {
+        color: #ddd;
+        margin-right: 15px;
+    }
+}
+</style>
+
+<div class="navigation-style">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="https://virgo.fund/"><img src="https://virgo.fund/img/logo.png"></a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="is-current"><a href="https://virgo.fund/" class="scroll"><span class="home_border">Home</span></a></li>
+            <li class="is-current"><a href="https://virgo.fund/pre_sale" class="scroll"><span class="home_border">Presale</span></a></li>
+            <li><a href="https://virgo.fund/dashboard" class="navbar-a"><span class="home_border">Dashboard</span></a></li>
+            <li> 
+                
+                
+                
+                <div class="sidebar__bottom">
+                    
+                    <label class="switch switch_theme js-switch-theme">
+                        <input class="switch__input" type="checkbox" />
+                        <span class="switch__in">
+                            <span class="switch__box"></span>
+                            <span class="switch__icon">
+                                <svg class="icon icon-moon">
+                                    <use xlink:href="img/sprite.svg#icon-moon"></use>
+                                </svg>
+                                
+                                <svg class="icon icon-sun">
+                                    <use xlink:href="img/sprite.svg#icon-sun"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+            
+            </div></li>      
+        </ul>
+    </div>
+</div>
+</nav>
+</div><div class="container-fluid bg-section1">
+<div class="container">
+  <div id="alertMessage">
+      </div>
+    
+    <div class="row">
+        <div class="col-md-12 dashboard_roadmap">
+            <h2>Virgo Token Overview </h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              
+                  <div class="item">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="wallet_dash_block" id="tron_bal_div">
+                                <div class="media">
+                                  <div class="media-left">
+                                    <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                                  </div>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">BNB</h4>
+                                    <h5>Binance Token</h5>
+                                    <p id="eth_balance">0.00</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4 dashboard_left_block">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="wallet_dash_block opacity_04" id="tron_bal_div">
+                        <div class="media">
+                          <div class="media-left">
+                            <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">BNB</h4>
+                            <h5>Binance Token</h5>
+                            <p id="eth_balance">0.00</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="wallet_dash_block ">
+                        <div class="media">
+                          <div class="media-left">
+                            <img src="https://virgo.fund/img/coin-circle.png" class="media-object" style="width:35px">
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">VGO</h4>
+                            <h5>Virgo Token</h5>
+                            <p>50.3 </p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div class="text-center connect_address_block">
+              <div id="referralSection" style="display: none;">
+                   <button class="btn vg-secondary-btn connect_wallet_main" onclick="connectETHNow()" id="connected_button">Connect Wallet</button>
+              </div> 
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h2>My Account </h2>
+                    <div class="dash_back dashboard_block_quicklinks">
+                        <div class="media">
+                          <div class="media-left">
+                            <img src="https://virgo.fund/img/dash1.svg" class="media-object">
+                          </div>
+                          <div class="media-body">
+                              <p>Status </p>
+                            <h4 class="media-heading">
+                                roled<span class="verify-status" >(Verified)</span>
+    						</h4>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12" >
+                    <div class="dash_back dashboard_block_quicklinks">
+                        <div class="media">
+                          <div class="media-left">
+                            <img src="https://virgo.fund/img/dash2.svg" class="media-object">
+                          </div>
+                          <div class="media-body">
+                              <p>My Team</p>
+                            <h4 class="media-heading">0</h4>
+                            
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-sm-12">
+                    <h2>Referral </h2>
+                    <div class="dash_back dashboard_block_quicklinks">
+                        <div class="media">
+                          <div class="media-left">
+                            <img src="https://virgo.fund/img/dash1.svg" class="media-object">
+                          </div>
+                          <div class="media-body">
+                              <p>Status </p>
+                            <h4 class="media-heading">
+                                roled<span class="verify-status" >(Verified)</span>
+    						</h4>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12" >
+                    <div class="dash_back dashboard_block_quicklinks">
+                        <div class="media">
+                          <div class="media-left">
+                            <img src="https://virgo.fund/img/dash2.svg" class="media-object">
+                          </div>
+                          <div class="media-body">
+                              <p>My Team</p>
+                            <h4 class="media-heading">0</h4>
+                            
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                
+                <div class="col-md-12 col-sm-12" style="display:none;">
+                    <div class="dash_back dashboard_block_quicklinks">
+                        <div class="media">
+                          <div class="media-left">
+                            <img src="https://virgo.fund/img/dash3.svg" class="media-object">
+                          </div>
+                          <div class="media-body">
+                              <p>Total Downlines</p>
+                            <h4 class="media-heading"></h4>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--<div class="row">-->
+            <!--    <div class="col-md-6 col-sm-6">-->
+            <!--        <div class="dash_back">-->
+                    <h3></h3>
+            <!--        <p>Active referral level</p>-->
+            <!--        </div>-->
+            <!--    </div>-->
+                
+            <!--</div>-->
+            
+            <!--<div id="referralSection" style="display: none;">-->
+            <!--  <button class="btn vg-primary-btn " onclick="getTrxWalletBalance()">Connect TRX</button>-->
+            <!--</div>     -->
+            
+           
+        </div>
+        <div class="col-md-8">
+            <div class="dashboard_right_block">
+                <!-- <div class="row">
+                    <div class="col-md-3">
+                        <div class="wallet_dash_block" id="tron_bal_div">
+                            <div class="media">
+                              <div class="media-left">
+                                <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading">BNB</h4>
+                                <h5>Binance Token</h5>
+                                <p id="eth_balance">0.00</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="wallet_dash_block" id="tron_bal_div">
+                            <div class="media">
+                              <div class="media-left">
+                                <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading">BNB</h4>
+                                <h5>Binance Token</h5>
+                                <p id="eth_balance">0.00</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="wallet_dash_block" id="tron_bal_div">
+                            <div class="media">
+                              <div class="media-left">
+                                <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading">BNB</h4>
+                                <h5>Binance Token</h5>
+                                <p id="eth_balance">0.00</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="wallet_dash_block" id="tron_bal_div">
+                            <div class="media">
+                              <div class="media-left">
+                                <img src="https://virgo.fund/img/tron-logo.webp" class="media-object" style="width:35px">
+                              </div>
+                              <div class="media-body">
+                                <h4 class="media-heading">BNB</h4>
+                                <h5>Binance Token</h5>
+                                <p id="eth_balance">0.00</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div> -->
+                <img src="https://virgo.fund/img/banner_top_add.png" class="banner_ads_top" />
+                
+               
+                <div class="details details_statements dashboard_detail_statement">
+                    <div class="details__container">
+                      <div class="details__title h5 mobile-hide">Earnings Report</div>
+                      <div class="dropdown js-dropdown">
+                        <div class="dropdown__head js-dropdown-head">Last 30 days</div>
+                        <div class="dropdown__body js-dropdown-body"><a class="dropdown__item" href="#">
+                            <div class="dropdown__title title">Bento 3D Kit </div>
+                            <div class="dropdown__info caption">Illustration</div>
+                          </a><a class="dropdown__item" href="#">
+                            <div class="dropdown__title title">Bento 3D Kit </div>
+                            <div class="dropdown__info caption">Illustration</div>
+                          </a><a class="dropdown__item" href="#">
+                            <div class="dropdown__title title">Collab UI Kit </div>
+                            <div class="dropdown__info caption">Coded Template</div>
+                          </a></div>
+                      </div>
+                      <div class="details__row">
+                        <div class="details__col">
+                          <div class="details__top">
+                            <div class="details__number h1">$586</div><a class="details__line" href="#">
+                              <div class="details__preview"><img class="details__pic" src="img/details-pic-1.png" alt=""></div>
+                              <div class="details__info caption-sm">Your total earnings</div>
+                            </a>
+                          </div>
+                          <div class="details__bottom">
+                            <div class="details__statistics">
+                              <div class="details__chart details__chart_activity">
+                                <div id="chart-active-users"></div>
+                              </div>
+                              <div class="details__status">
+                                <div class="details__icon bg-green"><svg class="icon icon-arrow-up-fat">
+                                    <use xlink:href="img/sprite.svg#icon-arrow-up-fat"></use>
+                                  </svg></div>
+                                <div class="details__percent caption-sm color-green">6%</div>
+                              </div>
+                            </div>
+                            <div class="details__info caption-sm">Update your payout method in Settings</div>
+                          </div>
+                        </div>
+                        <div class="details__col">
+                          <div class="details__chart details__chart_report">
+                            <div id="chart-report"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="details__list details__list_three">
+                        <div class="details__item">
+                          <div class="details__head">
+                            <div class="details__preview bg-purple"><img class="details__pic" src="img/folder.svg" alt=""></div>
+                            <div class="details__text caption-sm">Total Earnings</div>
+                          </div>
+                          <div class="details__counter h4">$586.75</div>
+                          <div class="details__indicator">
+                            <div class="details__progress bg-purple" style="width: 55%;"></div>
+                          </div>
+                        </div>
+                        <div class="details__item">
+                          <div class="details__head">
+                            <div class="details__preview bg-pink"><img class="details__pic" src="img/activity.svg" alt=""></div>
+                            <div class="details__text caption-sm">Item Earnings</div>
+                          </div>
+                          <div class="details__counter h4">$425.94</div>
+                          <div class="details__indicator">
+                            <div class="details__progress bg-pink" style="width: 52%;"></div>
+                          </div>
+                        </div>
+                        <div class="details__item">
+                          <div class="details__head">
+                            <div class="details__preview bg-blue"><img class="details__pic" src="img/bag.svg" alt=""></div>
+                            <div class="details__text caption-sm">Tax withheld</div>
+                          </div>
+                          <div class="details__counter h4">$25.94</div>
+                          <div class="details__indicator">
+                            <div class="details__progress bg-blue" style="width: 55%;"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="products products_statement dashboard_table_portfolio">
+                        <div class="products__title h6  mobile-hide">Portfolio</div>
+                        <div class="products__info caption mobile-hide">Please note: Transactions are based Time in California, USA.</div>
+                        <div class="products__table">
+                          <div class="products__row products__row_head">
+                            <div class="products__cell">Token Name</div>
+                            <div class="products__cell">Token Icon</div>
+                            <div class="products__cell">Live Token Price </div>
+                            <div class="products__cell">Tokens Balance</div>
+                            <div class="products__cell">Value In USD/BNB</div>
+                            <div class="products__cell text-right">Growth 24%</div>
+                          </div>
+                          <div class="products__row">
+                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
+                            <div class="products__cell color-gray">17 Aug 2020</div>
+                            <div class="products__cell">39511350</div>
+                            <div class="products__cell">$68.00</div>
+                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status caption bg-green">Sale</div>
+                            </div>
+                          </div>
+                          <div class="products__body">
+                            <div class="products__bg bg-green"></div>
+                            <div class="products__line">
+                              <div class="products__col color-gray">17 Aug 2020</div>
+                              <div class="products__col">$68.00</div>
+                              <div class="products__col color-red">-68.00</div>
+                            </div>
+                          </div>
+                          <div class="products__row">
+                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
+                            <div class="products__cell color-gray">17 Aug 2020</div>
+                            <div class="products__cell">39511350</div>
+                            <div class="products__cell">$68.00</div>
+                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status caption bg-green">Sale</div>
+                            </div>
+                          </div>
+                          <div class="products__body">
+                            <div class="products__bg bg-green"></div>
+                            <div class="products__line">
+                              <div class="products__col color-gray">17 Aug 2020</div>
+                              <div class="products__col">$68.00</div>
+                              <div class="products__col color-red">-68.00</div>
+                            </div>
+                          </div>
+                          <div class="products__row">
+                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
+                            <div class="products__cell color-gray">17 Aug 2020</div>
+                            <div class="products__cell">39511350</div>
+                            <div class="products__cell">$68.00</div>
+                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status caption bg-green">Sale</div>
+                            </div>
+                          </div>
+                          <div class="products__body">
+                            <div class="products__bg bg-green"></div>
+                            <div class="products__line">
+                              <div class="products__col color-gray">17 Aug 2020</div>
+                              <div class="products__col">$68.00</div>
+                              <div class="products__col color-red">-68.00</div>
+                            </div>
+                          </div>
+                          <div class="products__row">
+                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
+                            <div class="products__cell color-gray">17 Aug 2020</div>
+                            <div class="products__cell">39511350</div>
+                            <div class="products__cell">$68.00</div>
+                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status caption bg-green">Sale</div>
+                            </div>
+                          </div>
+                          <div class="products__body">
+                            <div class="products__bg bg-green"></div>
+                            <div class="products__line">
+                              <div class="products__col color-gray">17 Aug 2020</div>
+                              <div class="products__col">$68.00</div>
+                              <div class="products__col color-red">-68.00</div>
+                            </div>
+                          </div>
+                          <div class="products__row">
+                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
+                            <div class="products__cell color-gray">17 Aug 2020</div>
+                            <div class="products__cell">39511350</div>
+                            <div class="products__cell">$68.00</div>
+                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status caption bg-green">Sale</div>
+                            </div>
+                          </div>
+                          <div class="products__body">
+                            <div class="products__bg bg-green"></div>
+                            <div class="products__line">
+                              <div class="products__col color-gray">17 Aug 2020</div>
+                              <div class="products__col">$68.00</div>
+                              <div class="products__col color-red">-68.00</div>
+                            </div>
+                          </div>
+                          <div class="products__row">
+                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
+                            <div class="products__cell color-gray">17 Aug 2020</div>
+                            <div class="products__cell">39511350</div>
+                            <div class="products__cell">$68.00</div>
+                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status caption bg-green">Sale</div>
+                            </div>
+                          </div>
+                          <div class="products__body">
+                            <div class="products__bg bg-green"></div>
+                            <div class="products__line">
+                              <div class="products__col color-gray">17 Aug 2020</div>
+                              <div class="products__col">$68.00</div>
+                              <div class="products__col color-red">-68.00</div>
+                            </div>
+                          </div>
+                          <div class="products__row">
+                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
+                            <div class="products__cell color-gray">17 Aug 2020</div>
+                            <div class="products__cell">39511350</div>
+                            <div class="products__cell">$68.00</div>
+                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status caption bg-green">Sale</div>
+                            </div>
+                          </div>
+                          <div class="products__body">
+                            <div class="products__bg bg-green"></div>
+                            <div class="products__line">
+                              <div class="products__col color-gray">17 Aug 2020</div>
+                              <div class="products__col">$68.00</div>
+                              <div class="products__col color-red">-68.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="products__more"><button class="products__btn btn btn_black">Load More</button></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+               
+                
+                <div class="row margin_top_50">
+                    <div class="col-md-12">
+                        <div class="dashboard_referral_block">
+                            <h3>Refer your friends and earn tokens</h3>
+                            <h4>Connect your wallet to generate your referral link</h4>
+                            
+                            <div id="referral_copy_link" style="">
+                                <h6 class="referral_link"><span> https://virgo.fund/r?ref=roled <a onclick="copyTronAddress()"><span id="copy_link_text">Copy</span> <i class="fa fa-copy"></i></a></span></h6>
+                                <img src="https://virgo.fund/img/referral_block.png" class="referral_banner">
+                                <h6>Share</h6>
+                                <p class="social_dashboard">
+                                   <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://virgo.fund/r?ref=roled"><img src="https://virgo.fund/img/refer-facebook.svg"></a>
+                                   <a target="_blank" href="http://twitter.com/intent/tweet/?text=Hey friend ! Check out Virgo token, the best blockchain wallet with holding and referral rewards. Get registered and download the android app now ! Virgo blockchain wallet ! &amp;url=https://virgo.fund/r?ref=roled"><img src="https://virgo.fund/img/refer-twitter.svg"></a>
+                                   <a target="_blank" href="https://telegram.me/share/url?url=https://virgo.fund/r?ref=roled&amp;text= Hey friend ! Check out Virgo token, the best blockchain wallet with holding and referral rewards. Get registered and download the android app now ! Virgo blockchain wallet !"><img src="https://virgo.fund/img/refer-telegram.svg"></a>
+                                   <span class="earned_income"><a href="https://virgo.fund/earned_history">Earned History</a></span>
+                                </p>
+                             </div>
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--<iframe height="280" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="youtube-video"></iframe>-->
+                
+                <!--<h1 style="text-align: center;font-size: 40px;color: #0e225b;margin-top: 0;">Stay Connected! More interesting things are Coming Soon!!!!</h1>-->
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+</div>
+
+
+
+
+<div id="emailVerifyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-md" style="max-width: 410px;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <h5>Verify Your Email</h5>
+        <p>If your not received email? <a onclick="sendVerifyEmail()">Click Here</a></p>
+        <div id="alert_message">
+                 </div>
+        <form action="" method="post">
+          <div class="form-group">
+            <label for="otp" style="font-weight: 500;">Enter OTP:</label>
+            <input type="text" class="form-control" name="one_time_password" >
+                      </div>
+          
+          <button type="submit" class="btn btn-primary" name="save_n_submit_email_verify_otp">Verify OTP </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </form>
+       
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="ethWalletError" class="modal fade">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body" style="text-align: center; ">
+        <div id="ethWalletErrorMsg">
+            
+        </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="error_connection_error" class="modal fade">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body" style="text-align: center;">
+        
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer id="footer">
+     <div class="container">
+        <div class="row">
+            <ul class="col-md-12">
+              <li style="margin-bottom: 5px;">
+                 <h4><img src="https://virgo.fund/img/logo.png" alt="Logo"></h4>
+              </li>
+              <li>Decentralized global currency network with Blockchain cryptocurrency.</li>
+              <style>
+                  .social_icons_footer a i {
+                    font-size: 20px;
+                    color: #000;
+                    margin: 5px;
+                  }
+              </style>
+              <li class="social_icons_footer">
+                  <a href="https://twitter.com/virgotoken" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/virgotoken/" target="_blank"><i class="fa fa-instagram"></i></a>
+                  <a href="https://medium.com/@virgotoken" target="_blank"><i class="fa fa-medium"></i></a>
+                  <a href="https://t.me/virgotoken/" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+           
+        </div>
+        <div class="copyright row" style="margin-top: 0px;">
+<span class="column" style="text-align: left;">
+<a href="#">2021© Virgo, All rights reserved.</a>
+</span>
+           <span class="column">
+           <!--<a href="#">Trading council authority website</a>-->
+           </span>
+        </div>
+     </div>
+  </footer>
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/644d58430c.js"></script>
+    <script src="assets/js/lib/svg4everybody.min.js"></script>
+    <script src="assets/js/lib/apexcharts.min.js"></script>
+    <script src="assets/js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/charts.js"></script>
+<script>
+    
+    
+    function getTrxWalletBalance2()
+   {
+        if(window.tronWeb && window.tronWeb.defaultAddress.base58)
+        {
+            var fromAddress = window.tronWeb.defaultAddress.base58
+            saveUserTRXAddress(fromAddress);
+        }
+        else
+        {
+            $('#error_install_wllet').modal('show');
+        }
+   }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript">
+
+web3 = new Web3(window.ethereum);
+function connectETHNow()
+{
+    if(typeof window.ethereum != 'undefined')
+    {   
+        window.ethereum.enable()
+        .then(function(res) {
+              connectToMetamask()
+        })
+        .catch(error => {
+            $('#ethWalletErrorMsg').html('<h4 class="modal-title" >Request cancelled</h4><p> Sorry, Wallet authentication cancelled ! </p>');
+            $('#ethWalletError').modal('show');
+        })
+        
+    }
+    else
+    {    $('#ethWalletErrorMsg').html('<h4 class="modal-title" >Wallet not found</h4><p>Use Binance Link browser to connect wallet.</p>');
+         $('#ethWalletError').modal('show');
+        
+    }  
+}
+
+connectToMetamask();
+function connectToMetamask()
+{   
+    if(typeof window.ethereum != 'undefined')
+    {   
+        web3.eth.getAccounts().then(function(accounts)
+        {   
+            console.log(accounts);
+            var acc = accounts[0];
+            if((typeof acc != 'undefined'))
+            {   
+                checkWalletBal(acc)
+                saveUserETHAddress(acc)
+            }
+            
+        })
+    }
+}
+
+
+saveUserETHAddress('0x5f26a7101B0bB218F815340d447977Bf8907E762')
+function saveUserETHAddress(eth_address)
+{     
+    $.ajax({
+         url: 'https://virgo.fund/dashboard/save_eth_address',
+         type:'post',
+         data:{eth_address:eth_address},
+         success:function(result){
+          $('#referralSection').show();
+          $('#referral_copy_link').show();
+          var asdfdsa = JSON.parse(result);
+          if(asdfdsa.status == true)
+          {
+            $("#referralSection").html(asdfdsa.message);
+            $("#referral_copy_link").html(asdfdsa.referral_link);
+            $("#menu_connect_wallet").html(asdfdsa.menu_connect_wallet);
+            $("#tronConnectMessage").html('');
+            
+          }
+          else
+          {
+            $("#alertMessage").html(asdfdsa.message);
+          }
+          //console.log(asdfdsa);
+        }
+    });
+}
+  
+// function getUserWalletBal(eth_address)
+// {
+//     web3.eth.getBalance(eth_address).then(function(bal) 
+//     {   
+//       var wallet_balance = (bal/1000000000000000000).toFixed(4);
+//       var asdfssadfasdf = wallet_balance+': ';
+//       $('#wallet_balance').html(asdfssadfasdf);
+//     });
+// }
+
+function checkWalletBal(eth_address) 
+{   
+    if(typeof window.ethereum != 'undefined')
+    {   
+        web3.eth.getBalance(eth_address).then(function(bal) 
+        {   
+            
+           var wallet_balance = (bal/1000000000000000000).toFixed(4);
+           var asdfssadfasdf = wallet_balance;
+           $('#eth_balance').html(asdfssadfasdf);
+           $("#eth_bal_div").removeClass("opacity_04");
+        });
+    }
+}
+
+  // tronWeb.trx.getAccount(fromAddress).then(
+        //   (tradeobj) => {
+        //      globalBalance = tradeobj.balance/1000000;
+        //      $('#tron_balance').html(globalBalance);
+            
+        //       console.log('- Output:', tradeobj, '\n');
+        //   })
+ // web3.eth.net.getId().then(function(networkID)
+        // {   
+        //     console.log(networkID);
+        //     if(networkID != 56)
+        //     {
+        //       $('#ethWalletErrorMsg').html('<h4 class="modal-title" >Connection error</h4><p>Please set network type as Binance Smart Chain.</p>');
+        //       $('#ethWalletError').modal('show');
+        //     }
+        //     else
+        //     {
+                
+        //     }
+            
+        // });
+
+// var accountInterval = setInterval(function()
+// {
+//     var address = $('#address').html();
+//     var trim_address = address.trim();
+//     if(trim_address == '')
+//     {
+//         if((typeof web3 != 'undefined'))
+//         {
+//             web3.eth.getAccounts().then(function(accounts)
+//             {
+//                 var acc = accounts[0];
+//                 if((typeof acc != 'undefined'))
+//                 {   
+//                   $('#connected_button').html('Connected!');
+//                   $('#address').html(acc); 
+//                   $("#connected_button").prop("onclick", null).off("click");
+//                   getUserWalletBal(acc);
+//                   saveUserETHAddress(acc);
+//                 }
+                
+//             }).then(function(tx)
+//             {
+//                 //console.log(tx);
+//             }).catch(function(tx)
+//             {
+//                 $('#alert_message').html('');
+//                 $('#address').html('');
+//                 //console.log(tx);
+//             }) 
+//         }
+//     }
+//  }, 1000);
+
+
+
+
+
+//ETH connect wallet ends here 
+
+
+    
+      
+   
+   function sendVerifyEmail()
+   {
+        $.ajax({
+         url: 'https://virgo.fund/dashboard/send_otp_to_registered_email',
+         type:'get',
+         success:function(result){
+            $("#alert_message").html(result);
+        }
+      });
+   }
+
+  //saveUserTRXAddress2()
+  function saveUserTRXAddress2(trx_address)
+  {     
+      $.ajax({
+         url: 'https://virgo.fund/dashboard/save_tron_address',
+         type:'post',
+         data:{trx_address:trx_address},
+         success:function(result){
+          $('#referralSection').show();
+          $('#referral_copy_link').show();
+          var asdfdsa = JSON.parse(result);
+          if(asdfdsa.status == true)
+          {
+            $("#referralSection").html(asdfdsa.message);
+            $("#referral_copy_link").html(asdfdsa.referral_link);
+            $("#menu_connect_wallet").html(asdfdsa.menu_connect_wallet);
+            $("#tronConnectMessage").html('');
+            
+            checkWalletBal(trx_address); 
+          }
+          else
+          {
+            $("#alertMessage").html(asdfdsa.message);
+          }
+          //console.log(asdfdsa);
+        }
+      });
+  }
+  
+   
+
+  function getTrxWalletBalance()
+  {
+    if(window.tronWeb && window.tronWeb.defaultAddress.base58)
+    {
+        var fromAddress = window.tronWeb.defaultAddress.base58
+        saveUserTRXAddress2(fromAddress);
+    }
+    else
+    {
+        $('#error_install_wllet').modal('show');
+    }
+  }
+
+  
+    function copyTronAddress() 
+    { 
+      var referral_url = "https://virgo.fund/r?ref=roled";
+     
+      var textField = document.createElement('textarea')
+      textField.innerText = referral_url
+      document.body.appendChild(textField)
+      textField.select()
+      document.execCommand('copy')
+      textField.remove()
+        $('#copy_link_text').html('Copied');
+      
+      setTimeout(function() {
+        $('#copy_link_text').html('Copy');
+      }, 3000)
+    }
+    
+
+
+ </script>
+ 
+</body>
+</html>
