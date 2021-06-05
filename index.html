@@ -111,25 +111,8 @@
                 
                 
                 
-                <div class="sidebar__bottom">
-                    
-                    <label class="switch switch_theme js-switch-theme">
-                        <input class="switch__input" type="checkbox" />
-                        <span class="switch__in">
-                            <span class="switch__box"></span>
-                            <span class="switch__icon">
-                                <svg class="icon icon-moon">
-                                    <use xlink:href="img/sprite.svg#icon-moon"></use>
-                                </svg>
-                                
-                                <svg class="icon icon-sun">
-                                    <use xlink:href="img/sprite.svg#icon-sun"></use>
-                                </svg>
-                            </span>
-                        </span>
-                    </label>
-            
-            </div></li>      
+                
+          </li>      
         </ul>
     </div>
 </div>
@@ -138,7 +121,25 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 dashboard_roadmap">
-            <h2>Virgo Token Events </h2>
+            <h2>Virgo Token Events 
+              <div class="sidebar__bottom">
+                <label class="switch switch_theme js-switch-theme">
+                  <input class="switch__input" type="checkbox" />
+                  <span class="switch__in">
+                      <span class="switch__box"></span>
+                      <span class="switch__icon">
+                          <svg class="icon icon-moon">
+                              <use xlink:href="img/sprite.svg#icon-moon"></use>
+                          </svg>
+                          
+                          <svg class="icon icon-sun">
+                              <use xlink:href="img/sprite.svg#icon-sun"></use>
+                          </svg>
+                      </span>
+                  </span>
+                </label>
+              </div>
+            </h2>
             <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-interval="false" >
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -148,6 +149,8 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                 </a>
+                
+                
                 <div class="carousel-inner">
                   <div class="item active">
                     <div class="row">
@@ -414,11 +417,23 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12" >
-                    
                     <div class="notifications__list invitees_block">
                         <div class="notifications__info h6">Your Invitees</div>
                         <div class="details__container">
+                          <div class="invitee_quick_view">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <h4>Addresses</h4>
+                                <h6>44</h6>
+                              </div>
+                              <div class="col-md-6">
+                                <h4>Earned</h4>
+                                <h6>5260</h6>
+                              </div>
+                            </div>
+                          </div>
                            
+
                         <a class="notifications__item" href="notifications.html">
                            <div class="notifications__ava">
                               <img class="notifications__pic" src="assets/images/ava-1.png" alt="">
@@ -532,41 +547,11 @@
                             </div>
                          </a>
                         </div>
-                        
                     </div>
                 </div>
 
 
-                <div class="col-md-12 col-sm-12">
-                    <h2>Referral </h2>
-                    <div class="dash_back dashboard_block_quicklinks">
-                        <div class="media">
-                          <div class="media-left">
-                            <img src="https://virgo.fund/img/dash1.svg" class="media-object">
-                          </div>
-                          <div class="media-body">
-                              <p>Status </p>
-                            <h4 class="media-heading">
-                                roled<span class="verify-status" >(Verified)</span>
-    						</h4>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-12" >
-                    <div class="dash_back dashboard_block_quicklinks">
-                        <div class="media">
-                          <div class="media-left">
-                            <img src="https://virgo.fund/img/dash2.svg" class="media-object">
-                          </div>
-                          <div class="media-body">
-                              <p>My Team</p>
-                            <h4 class="media-heading">0</h4>
-                            
-                          </div>
-                        </div>
-                    </div>
-                </div>
+              
                 
 
                 
@@ -666,12 +651,37 @@
                     </div>
     
                 </div> -->
+                <h2 class="banner_title">Token Overview</h2>
                 <img src="https://virgo.fund/img/banner_top_add.png" class="banner_ads_top" />
-                
+
+                <div class="row margin_top_50">
+                  <div class="col-md-12">
+                    <h2 class="banner_title">Refer your friends and earn tokens</h2>
+                      <div class="dashboard_referral_block">
+                          <div id="referral_copy_link" style="">
+                              <h6 class="referral_link"><span> https://virgo.fund/r?ref=roled <a onclick="copyTronAddress()"><span id="copy_link_text">Copy</span> <i class="fa fa-copy"></i></a></span></h6>
+                              <img src="https://virgo.fund/img/referral_block.png" class="referral_banner">
+                              <h6>Share</h6>
+                              <p class="social_dashboard">
+                                 <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://virgo.fund/r?ref=roled"><img src="https://virgo.fund/img/refer-facebook.svg"></a>
+                                 <a target="_blank" href="http://twitter.com/intent/tweet/?text=Hey friend ! Check out Virgo token, the best blockchain wallet with holding and referral rewards. Get registered and download the android app now ! Virgo blockchain wallet ! &amp;url=https://virgo.fund/r?ref=roled"><img src="https://virgo.fund/img/refer-twitter.svg"></a>
+                                 <a target="_blank" href="https://telegram.me/share/url?url=https://virgo.fund/r?ref=roled&amp;text= Hey friend ! Check out Virgo token, the best blockchain wallet with holding and referral rewards. Get registered and download the android app now ! Virgo blockchain wallet !"><img src="https://virgo.fund/img/refer-telegram.svg"></a>
+                              </p>
+                           </div>
+                      </div>
+                  </div>
+              </div>
                
                 <div class="details details_statements dashboard_detail_statement">
+                  <h2 class="banner_title">Your Wallet Portfolio Report</h2>
                     <div class="details__container">
-                      <div class="details__title h5 mobile-hide">Earnings Report</div>
+                      <div class="wallet_enable_portfolio">
+                        <div class="portfolio_connect_wallet_btn">
+                          <button>Connect Wallet</button>
+                        </div>
+                      </div>
+                      <div class="details__info caption-sm">Your Wallet Balance</div>
+                      <div class="details__title h4 mobile-hide">$ 8657.25987548</div>
                       <div class="dropdown js-dropdown">
                         <div class="dropdown__head js-dropdown-head">Last 30 days</div>
                         <div class="dropdown__body js-dropdown-body"><a class="dropdown__item" href="#">
@@ -688,10 +698,9 @@
                       <div class="details__row">
                         <div class="details__col">
                           <div class="details__top">
-                            <div class="details__number h1">$586</div><a class="details__line" href="#">
-                              <div class="details__preview"><img class="details__pic" src="img/details-pic-1.png" alt=""></div>
-                              <div class="details__info caption-sm">Your total earnings</div>
-                            </a>
+                            <div class="details__info caption-sm">Yesterday's PNL</div>
+                            <div class="details__number h4" style="margin: 0;">- $ 10204</div>
+                            <div class="details__info color-red h6" style="margin: 0;">-4.55%</div>
                           </div>
                           <div class="details__bottom">
                             <div class="details__statistics">
@@ -718,9 +727,9 @@
                         <div class="details__item">
                           <div class="details__head">
                             <div class="details__preview bg-purple"><img class="details__pic" src="img/folder.svg" alt=""></div>
-                            <div class="details__text caption-sm">Total Earnings</div>
+                            <div class="details__text caption-sm">Balance in BNB</div>
                           </div>
-                          <div class="details__counter h4">$586.75</div>
+                          <div class="details__counter h4">586.75 BNB</div>
                           <div class="details__indicator">
                             <div class="details__progress bg-purple" style="width: 55%;"></div>
                           </div>
@@ -728,9 +737,9 @@
                         <div class="details__item">
                           <div class="details__head">
                             <div class="details__preview bg-pink"><img class="details__pic" src="img/activity.svg" alt=""></div>
-                            <div class="details__text caption-sm">Item Earnings</div>
+                            <div class="details__text caption-sm">Balance in USD</div>
                           </div>
-                          <div class="details__counter h4">$425.94</div>
+                          <div class="details__counter h4">425.94 USD</div>
                           <div class="details__indicator">
                             <div class="details__progress bg-pink" style="width: 52%;"></div>
                           </div>
@@ -738,9 +747,9 @@
                         <div class="details__item">
                           <div class="details__head">
                             <div class="details__preview bg-blue"><img class="details__pic" src="img/bag.svg" alt=""></div>
-                            <div class="details__text caption-sm">Tax withheld</div>
+                            <div class="details__text caption-sm">Other Tokens Balance</div>
                           </div>
-                          <div class="details__counter h4">$25.94</div>
+                          <div class="details__counter h4">25.94</div>
                           <div class="details__indicator">
                             <div class="details__progress bg-blue" style="width: 55%;"></div>
                           </div>
@@ -749,140 +758,129 @@
 
                       <div class="products products_statement dashboard_table_portfolio">
                         <div class="products__title h6  mobile-hide">Portfolio</div>
-                        <div class="products__info caption mobile-hide">Please note: Transactions are based Time in California, USA.</div>
+                        <div class="products__info caption mobile-hide">Please note: The available balance is based on BEP20 tokens. We are trying to help you</div>
                         <div class="products__table">
                           <div class="products__row products__row_head">
+                            <div class="products__cell">#</div>
                             <div class="products__cell">Token Name</div>
-                            <div class="products__cell">Token Icon</div>
                             <div class="products__cell">Live Token Price </div>
-                            <div class="products__cell">Tokens Balance</div>
-                            <div class="products__cell">Value In USD/BNB</div>
-                            <div class="products__cell text-right">Growth 24%</div>
+ 
+                            <div class="products__cell ">Growth 24%</div>
+                            <div class="products__cell text-right">Tokens Balance</div>
                           </div>
                           <div class="products__row">
-                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
-                            <div class="products__cell color-gray">17 Aug 2020</div>
-                            <div class="products__cell">39511350</div>
-                            <div class="products__cell">$68.00</div>
-                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell">1</div>
+                            <div class="products__cell color-gray">
+                              <a class="notifications__item portfolio_block_column">
+                                <div class="notifications__ava">
+                                  <img class="notifications__pic" src="assets/images/safemoon.jfif" alt="">
+                                </div>
+                                <div class="notifications__details">
+                                   <div class="notifications__line">
+                                      <div class="notifications__user caption">SafeMoon</div>
+                                   </div>
+                                   <div class="notifications__text caption-sm">(SafeMoon)</div>
+                                </div>
+                              </a>
+                             </div>
+                            <div class="products__cell">$ 0.0254</div>
+                            <div class="products__cell">
+                              <div class="products__status color-green">8.9%</div>
+                            </div>
                             <div class="products__cell text-right">
-                              <div class="products__status caption bg-green">Sale</div>
-                            </div>
-                          </div>
-                          <div class="products__body">
-                            <div class="products__bg bg-green"></div>
-                            <div class="products__line">
-                              <div class="products__col color-gray">17 Aug 2020</div>
-                              <div class="products__col">$68.00</div>
-                              <div class="products__col color-red">-68.00</div>
-                            </div>
-                          </div>
-                          <div class="products__row">
-                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
-                            <div class="products__cell color-gray">17 Aug 2020</div>
-                            <div class="products__cell">39511350</div>
-                            <div class="products__cell">$68.00</div>
-                            <div class="products__cell color-red">-68.00</div>
-                            <div class="products__cell text-right">
-                              <div class="products__status caption bg-green">Sale</div>
-                            </div>
-                          </div>
-                          <div class="products__body">
-                            <div class="products__bg bg-green"></div>
-                            <div class="products__line">
-                              <div class="products__col color-gray">17 Aug 2020</div>
-                              <div class="products__col">$68.00</div>
-                              <div class="products__col color-red">-68.00</div>
+                              <div class="products__status color-gray">12458 Tokens<br/><span>$ 22500</span></div>
                             </div>
                           </div>
                           <div class="products__row">
-                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
-                            <div class="products__cell color-gray">17 Aug 2020</div>
-                            <div class="products__cell">39511350</div>
-                            <div class="products__cell">$68.00</div>
-                            <div class="products__cell color-red">-68.00</div>
-                            <div class="products__cell text-right">
-                              <div class="products__status caption bg-green">Sale</div>
+                            <div class="products__cell">2</div>
+                            <div class="products__cell color-gray">
+                              <a class="notifications__item portfolio_block_column">
+                                <div class="notifications__ava">
+                                  <img class="notifications__pic" src="assets/images/safemoon.jfif" alt="">
+                                </div>
+                                <div class="notifications__details">
+                                   <div class="notifications__line">
+                                      <div class="notifications__user caption">SafeMoon</div>
+                                   </div>
+                                   <div class="notifications__text caption-sm">(SafeMoon)</div>
+                                </div>
+                              </a>
+                             </div>
+                            <div class="products__cell">$ 0.0254</div>
+                            <div class="products__cell">
+                              <div class="products__status color-green">8.9%</div>
                             </div>
-                          </div>
-                          <div class="products__body">
-                            <div class="products__bg bg-green"></div>
-                            <div class="products__line">
-                              <div class="products__col color-gray">17 Aug 2020</div>
-                              <div class="products__col">$68.00</div>
-                              <div class="products__col color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status color-gray">12458 Tokens<br/><span>$ 22500</span></div>
                             </div>
                           </div>
                           <div class="products__row">
-                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
-                            <div class="products__cell color-gray">17 Aug 2020</div>
-                            <div class="products__cell">39511350</div>
-                            <div class="products__cell">$68.00</div>
-                            <div class="products__cell color-red">-68.00</div>
-                            <div class="products__cell text-right">
-                              <div class="products__status caption bg-green">Sale</div>
+                            <div class="products__cell">3</div>
+                            <div class="products__cell color-gray">
+                              <a class="notifications__item portfolio_block_column">
+                                <div class="notifications__ava">
+                                  <img class="notifications__pic" src="assets/images/safemoon.jfif" alt="">
+                                </div>
+                                <div class="notifications__details">
+                                   <div class="notifications__line">
+                                      <div class="notifications__user caption">SafeMoon</div>
+                                   </div>
+                                   <div class="notifications__text caption-sm">(SafeMoon)</div>
+                                </div>
+                              </a>
+                             </div>
+                            <div class="products__cell">$ 0.0254</div>
+                            <div class="products__cell">
+                              <div class="products__status color-green">8.9%</div>
                             </div>
-                          </div>
-                          <div class="products__body">
-                            <div class="products__bg bg-green"></div>
-                            <div class="products__line">
-                              <div class="products__col color-gray">17 Aug 2020</div>
-                              <div class="products__col">$68.00</div>
-                              <div class="products__col color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status color-gray">12458 Tokens<br/><span>$ 22500</span></div>
                             </div>
                           </div>
                           <div class="products__row">
-                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
-                            <div class="products__cell color-gray">17 Aug 2020</div>
-                            <div class="products__cell">39511350</div>
-                            <div class="products__cell">$68.00</div>
-                            <div class="products__cell color-red">-68.00</div>
-                            <div class="products__cell text-right">
-                              <div class="products__status caption bg-green">Sale</div>
+                            <div class="products__cell">4</div>
+                            <div class="products__cell color-gray">
+                              <a class="notifications__item portfolio_block_column">
+                                <div class="notifications__ava">
+                                  <img class="notifications__pic" src="assets/images/safemoon.jfif" alt="">
+                                </div>
+                                <div class="notifications__details">
+                                   <div class="notifications__line">
+                                      <div class="notifications__user caption">SafeMoon</div>
+                                   </div>
+                                   <div class="notifications__text caption-sm">(SafeMoon)</div>
+                                </div>
+                              </a>
+                             </div>
+                            <div class="products__cell">$ 0.0254</div>
+                            <div class="products__cell">
+                              <div class="products__status color-green">8.9%</div>
                             </div>
-                          </div>
-                          <div class="products__body">
-                            <div class="products__bg bg-green"></div>
-                            <div class="products__line">
-                              <div class="products__col color-gray">17 Aug 2020</div>
-                              <div class="products__col">$68.00</div>
-                              <div class="products__col color-red">-68.00</div>
+                            <div class="products__cell text-right">
+                              <div class="products__status color-gray">12458 Tokens<br/><span>$ 22500</span></div>
                             </div>
                           </div>
                           <div class="products__row">
-                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
-                            <div class="products__cell color-gray">17 Aug 2020</div>
-                            <div class="products__cell">39511350</div>
-                            <div class="products__cell">$68.00</div>
-                            <div class="products__cell color-red">-68.00</div>
+                            <div class="products__cell">5</div>
+                            <div class="products__cell color-gray">
+                              <a class="notifications__item portfolio_block_column">
+                                <div class="notifications__ava">
+                                  <img class="notifications__pic" src="assets/images/safemoon.jfif" alt="">
+                                </div>
+                                <div class="notifications__details">
+                                   <div class="notifications__line">
+                                      <div class="notifications__user caption">SafeMoon</div>
+                                   </div>
+                                   <div class="notifications__text caption-sm">(SafeMoon)</div>
+                                </div>
+                              </a>
+                             </div>
+                            <div class="products__cell">$ 0.0254</div>
+                            <div class="products__cell">
+                              <div class="products__status color-green">8.9%</div>
+                            </div>
                             <div class="products__cell text-right">
-                              <div class="products__status caption bg-green">Sale</div>
-                            </div>
-                          </div>
-                          <div class="products__body">
-                            <div class="products__bg bg-green"></div>
-                            <div class="products__line">
-                              <div class="products__col color-gray">17 Aug 2020</div>
-                              <div class="products__col">$68.00</div>
-                              <div class="products__col color-red">-68.00</div>
-                            </div>
-                          </div>
-                          <div class="products__row">
-                            <div class="products__cell"><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span></span></label></div>
-                            <div class="products__cell color-gray">17 Aug 2020</div>
-                            <div class="products__cell">39511350</div>
-                            <div class="products__cell">$68.00</div>
-                            <div class="products__cell color-red">-68.00</div>
-                            <div class="products__cell text-right">
-                              <div class="products__status caption bg-green">Sale</div>
-                            </div>
-                          </div>
-                          <div class="products__body">
-                            <div class="products__bg bg-green"></div>
-                            <div class="products__line">
-                              <div class="products__col color-gray">17 Aug 2020</div>
-                              <div class="products__col">$68.00</div>
-                              <div class="products__col color-red">-68.00</div>
+                              <div class="products__status color-gray">12458 Tokens<br/><span>$ 22500</span></div>
                             </div>
                           </div>
                         </div>
@@ -894,28 +892,7 @@
                   
                
                 
-                <div class="row margin_top_50">
-                    <div class="col-md-12">
-                        <div class="dashboard_referral_block">
-                            <h3>Refer your friends and earn tokens</h3>
-                            <h4>Connect your wallet to generate your referral link</h4>
-                            
-                            <div id="referral_copy_link" style="">
-                                <h6 class="referral_link"><span> https://virgo.fund/r?ref=roled <a onclick="copyTronAddress()"><span id="copy_link_text">Copy</span> <i class="fa fa-copy"></i></a></span></h6>
-                                <img src="https://virgo.fund/img/referral_block.png" class="referral_banner">
-                                <h6>Share</h6>
-                                <p class="social_dashboard">
-                                   <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://virgo.fund/r?ref=roled"><img src="https://virgo.fund/img/refer-facebook.svg"></a>
-                                   <a target="_blank" href="http://twitter.com/intent/tweet/?text=Hey friend ! Check out Virgo token, the best blockchain wallet with holding and referral rewards. Get registered and download the android app now ! Virgo blockchain wallet ! &amp;url=https://virgo.fund/r?ref=roled"><img src="https://virgo.fund/img/refer-twitter.svg"></a>
-                                   <a target="_blank" href="https://telegram.me/share/url?url=https://virgo.fund/r?ref=roled&amp;text= Hey friend ! Check out Virgo token, the best blockchain wallet with holding and referral rewards. Get registered and download the android app now ! Virgo blockchain wallet !"><img src="https://virgo.fund/img/refer-telegram.svg"></a>
-                                   <span class="earned_income"><a href="https://virgo.fund/earned_history">Earned History</a></span>
-                                </p>
-                             </div>
-                           
-                            
-                        </div>
-                    </div>
-                </div>
+                
                 <!--<iframe height="280" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="youtube-video"></iframe>-->
                 
                 <!--<h1 style="text-align: center;font-size: 40px;color: #0e225b;margin-top: 0;">Stay Connected! More interesting things are Coming Soon!!!!</h1>-->

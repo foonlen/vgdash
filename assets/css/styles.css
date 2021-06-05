@@ -342,7 +342,7 @@ footer .copyright a {
     margin-bottom: 15px;
 }
 .pre_sale_page_quick_link h5 span {
-        font-weight: 600;
+    font-weight: 600;
 }
 
 .page_header h4 {
@@ -402,6 +402,25 @@ footer .copyright a {
 
 .pt-1 {
     padding-top: 15px;
+}
+
+.dashboard_detail_statement .details__counter {
+  font-size: 18px;
+}
+
+.portfolio_connect_wallet_btn {
+  margin-top: 25%;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+.portfolio_connect_wallet_btn button {
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 10px 25px 8px;
+  border-radius: 10px;
+  font-size: 22px;
+  background: #fff;
+  font-weight: 800;
 }
 
 @media(max-width: 768px) {

@@ -999,6 +999,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #11142D;
+  background: radial-gradient(#f0deff, #dbd1ff, #fff);
 }
 
 body.dark {
@@ -4052,10 +4053,19 @@ body.dark .radio__input:checked + .radio__in .radio__text {
   color: #ffffff;
 }
 
+body.dark .portfolio_connect_wallet_btn button {
+  color: #000;
+}
+
+body.dark .dashboard_referral_block {
+  box-shadow: 0 0 35px rgb(17 17 17 / 60%);
+  background-color: #242731 !important;
+}
+
 .details__container {
   position: relative;
   padding: 32px 32px 38px;
-  background: #ffffff;
+  background: rgb(255 255 255 / 35%);
   border-radius: 24px;
 }
 
@@ -7720,18 +7730,21 @@ body.dark .mfp-bg {
 
 .sidebar__bottom .switch__in {
   padding: 0 !important;
-  margin-top: 8px;
+  margin-top: 0px;
 }
 
 .sidebar__bottom {
   padding: 0 0px;
-}
-
-body.dark .dashboard_roadmap .wallet_dash_block {
-  background: #242731;
+  float: right;
+  margin-right: 50px;
   box-shadow: none;
 }
 
+body.dark .dashboard_roadmap .wallet_dash_block {
+  box-shadow: 0 0 35px rgb(17 17 17 / 60%);
+  background-color: #242731;
+}
+/* 
 body.dark .dashboard_roadmap .wallet_dash_block:before, body.dark .wallet_dash_block:before {
   content: "";
   position: absolute;
@@ -7745,7 +7758,7 @@ body.dark .dashboard_roadmap .wallet_dash_block:before, body.dark .wallet_dash_b
   -webkit-filter: blur(86.985px);
   filter: blur(86.985px);
   border-radius: 24px;
-}
+} */
 
 body.dark .dashboard_roadmap .dash_back {
   background-color: #242731;
@@ -7756,8 +7769,13 @@ body.dark .wallet_dash_block, body.dark .dash_back {
   background-color: #242731;
 }
 
-{
-  
+body.dark .invitees_block .h6 {
+  color: #fff
+}
+
+body.dark .invitees_block .details__container {
+  box-shadow: 0 0 35px rgb(17 17 17 / 60%);
+  background-color: #242731 !important;
 }
 
 @media only screen and (max-width: 1339px) and (max-width: 767px) {

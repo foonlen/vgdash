@@ -41,7 +41,7 @@
 .banner_ads_top {
   width: 100%;
   border-radius: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .digital_card_base {
@@ -102,7 +102,7 @@
   padding: 15px 15px 0;
   border: 0;
   box-shadow: 0 0 35px #eee;
-  min-height: 190px;
+  min-height: 120px;
   background: #fff;
 }
 
@@ -122,11 +122,11 @@
 }
 
 .dashboard_referral_block .referral_banner {
-    position: absolute;
-    right: 15px;
-    top: 0;
-    border-radius: 10px;
-    height: 190px;
+  position: absolute;
+  right: 15px;
+  top: 30px;
+  border-radius: 10px;
+  height: 122px;
 }
 
 .dashboard_referral_block h6 {
@@ -172,8 +172,8 @@
 }
 
 .social_dashboard img {
-  width: 25px;
-  margin-right: 15px;
+  width: 18px;
+  margin-right: 5px;
   border-radius: 3px;
   display: inline-block;
 }
@@ -223,6 +223,7 @@
     border-radius: 15px;
     margin-bottom: 20px;
     margin-top: 20px;
+    background: #fff;
 }
 
 .wallet_dash_block h4 {
@@ -557,6 +558,73 @@
   border-radius: 50%;
 }
 
+
+.dashboard_table_portfolio .products__cell {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.portfolio_block_column {
+  padding: 0 !important;
+}
+
+.portfolio_block_column .notifications__ava {
+  margin-right: 0 !important;
+}
+
+.portfolio_block_column .notifications__ava {
+  width: auto !important;
+  height: auto !important;
+}
+
+.portfolio_block_column .notifications__ava > .notifications__pic {
+  width: 34px !important;
+  margin-right: 10px;
+}
+
+.portfolio_block_column:hover {
+  background: transparent !important;
+}
+
+.portfolio_block_column:hover .notifications__user {
+  color: #11142D !important;
+}
+
+.portfolio_block_column:hover .notifications__text {
+  color: grey !important;
+}
+
+.portfolio_block_column:hover .notifications__user {
+  color: #fff !important;
+}
+
+.wallet_enable_portfolio {
+  position: absolute;
+  background: rgb(0 0 0 / 93%);
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+}
+
+.invitee_quick_view {
+  padding: 15px;
+}
+
+.invitee_quick_view h4 {
+  color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.invitee_quick_view h6 {
+  font-size: 28px;
+  color: #fff;
+}
+
 /* keyframes for the download icon anim */
 @keyframes downloadArrow {
 	/* 0% and 0.001% keyframes used as a hackish way of having the button frozen on a nice looking frame by default */
@@ -817,6 +885,13 @@ a:hover, a:focus {
 
 .dashboard_roadmap .right.carousel-control {
   right: 0;
+}
+
+.banner_title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 @keyframes icon-bounce {
