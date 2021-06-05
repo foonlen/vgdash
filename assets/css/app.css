@@ -1818,7 +1818,7 @@ body.dark .sidebar.active .sidebar__burger {
   display: block;
   width: 64px;
   height: 24px;
-  background: rgba(228, 228, 228, 0.5);
+  background: #fff;
   border-radius: 16px;
   -webkit-transition: all .25s;
   -o-transition: all .25s;
