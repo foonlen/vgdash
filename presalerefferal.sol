@@ -169,6 +169,8 @@ contract PresaleReferral is Ownable {
     uint256 public tokenPricePerBNB;
     bool public presaleStatus;
 
+    string public baseUrl = "https://virgo.fund/r?ref=";
+    
     mapping(address => uint256) public deposits;
 
     constructor(TRUSTMOON _token) public {
@@ -246,8 +248,12 @@ contract PresaleReferral is Ownable {
         presaleStatus = true;
     }
     
-    function changeTokenAddress(TRUSTMOON addr) external onlyOwner {
-        token = addr;
+    function setTokenAddress(TRUSTMOON tokenAddr) external onlyOwner {
+        token = tokenAddr;
+    }
+    
+    function setBaseUrl(string calldata _baseUrl) external onlyOwner {
+        baseUrl = _baseUrl;
     }
 
     event Deposited(address indexed user, uint256 amount);
