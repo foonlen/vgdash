@@ -199,6 +199,11 @@ contract PresaleReferral is Ownable {
     }
     
     function saveUser(string calldata _userNickName, string calldata _inviterNickName) external returns (bool) {
+        require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked("")), "USER NICKNAME CAN'T BE EMPTY");
+        require(keccak256(abi.encodePacked(_inviterNickName)) != keccak256(abi.encodePacked("")), "INVITER NICKNAME CAN'T BE EMPTY");
+        require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked(_inviterNickName)), "INVITER CAN'T BE YOURSELF");
+        require(existUser(_userNickName) != true, "INVITER NICKNAME CAN'T BE EMPTY");
+
         userInfo memory user;
         user.userNickName = _userNickName;
         if (keccak256(abi.encodePacked(_inviterNickName)) != keccak256(abi.encodePacked(""))) {
@@ -210,6 +215,8 @@ contract PresaleReferral is Ownable {
     }
     
     function existUser(string calldata _userNickName) public view returns (bool) {
+        require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked("")), "USER NICKNAME CAN'T BE EMPTY");
+        
         for (uint i = 0; i < userInfoArrays.length; i++) {
             if (keccak256(abi.encodePacked(userInfoArrays[i].userNickName)) == keccak256(abi.encodePacked(_userNickName))) {
                 return true;
@@ -219,6 +226,8 @@ contract PresaleReferral is Ownable {
     }
     
     function getInviter(string calldata _userNickName) public view returns (string memory) {
+        require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked("")), "USER NICKNAME CAN'T BE EMPTY");
+        
         for (uint i = 0; i < userInfoArrays.length; i++) {
             if (keccak256(abi.encodePacked(userInfoArrays[i].userNickName)) == keccak256(abi.encodePacked(_userNickName))) {
                 return userInfoArrays[i].inviterNickName;
@@ -228,6 +237,8 @@ contract PresaleReferral is Ownable {
     }
     
     function getInviteeList(string calldata _userNickName) public view returns (string memory) {
+        require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked("")), "USER NICKNAME CAN'T BE EMPTY");
+        
         bytes memory b;
         for (uint i = 0; i < userInfoArrays.length; i++) {
             if (keccak256(abi.encodePacked(userInfoArrays[i].inviterNickName)) == keccak256(abi.encodePacked(_userNickName))) {
