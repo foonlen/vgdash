@@ -201,7 +201,9 @@ contract PresaleReferral is Ownable {
     function saveUser(string calldata _userNickName, string calldata _inviterNickName) external returns (bool) {
         userInfo memory user;
         user.userNickName = _userNickName;
-        user.inviterNickName = _inviterNickName;
+        if (keccak256(abi.encodePacked(_inviterNickName)) != keccak256(abi.encodePacked(""))) {
+            user.inviterNickName = _inviterNickName;
+        }
         userInfoArrays.push(user);
         userInfoArrays[userInfoArrays.length - 1].walletAddresses.push(msg.sender);
         return true;
@@ -214,6 +216,27 @@ contract PresaleReferral is Ownable {
             }
         }
         return false;
+    }
+    
+    function getInviter(string calldata _userNickName) public view returns (string memory) {
+        for (uint i = 0; i < userInfoArrays.length; i++) {
+            if (keccak256(abi.encodePacked(userInfoArrays[i].userNickName)) == keccak256(abi.encodePacked(_userNickName))) {
+                return userInfoArrays[i].inviterNickName;
+            }
+        }
+        return "";
+    }
+    
+    function getInviteeList(string calldata _userNickName) public view returns (string memory) {
+        bytes memory b;
+        for (uint i = 0; i < userInfoArrays.length; i++) {
+            if (keccak256(abi.encodePacked(userInfoArrays[i].inviterNickName)) == keccak256(abi.encodePacked(_userNickName))) {
+                b = abi.encodePacked(b, userInfoArrays[i].userNickName);
+                b = abi.encodePacked(b, ",");
+            }
+        }
+        string memory inviteeList = string(b);
+        return inviteeList;
     }
 
     function buyPresale(address inviter) public payable {
