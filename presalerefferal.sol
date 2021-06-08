@@ -191,7 +191,7 @@ contract PresaleReferral is Ownable {
     }
 
     receive() payable external {
-        buyPresale(this.owner());
+        // buyPresale(this.owner());
     }
     
     function balanceOf(address account) public view returns (uint256) {
@@ -200,7 +200,6 @@ contract PresaleReferral is Ownable {
     
     function saveUser(string calldata _userNickName, string calldata _inviterNickName) external returns (bool) {
         require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked("")), "USER NICKNAME CAN'T BE EMPTY");
-        require(keccak256(abi.encodePacked(_inviterNickName)) != keccak256(abi.encodePacked("")), "INVITER NICKNAME CAN'T BE EMPTY");
         require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked(_inviterNickName)), "INVITER CAN'T BE YOURSELF");
         require(existUser(_userNickName) != true, "INVITER NICKNAME CAN'T BE EMPTY");
 
@@ -208,6 +207,8 @@ contract PresaleReferral is Ownable {
         user.userNickName = _userNickName;
         if (keccak256(abi.encodePacked(_inviterNickName)) != keccak256(abi.encodePacked(""))) {
             user.inviterNickName = _inviterNickName;
+        } else {
+            user.inviterNickName = "";
         }
         userInfoArrays.push(user);
         userInfoArrays[userInfoArrays.length - 1].walletAddresses.push(msg.sender);
@@ -223,6 +224,20 @@ contract PresaleReferral is Ownable {
             }
         }
         return false;
+    }
+    
+    function getWallet(string calldata _userNickName) public view returns (address[] memory) {
+        require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked("")), "USER NICKNAME CAN'T BE EMPTY");
+        
+        address[] memory wallet;
+        
+        for (uint i = 0; i < userInfoArrays.length; i++) {
+            if (keccak256(abi.encodePacked(userInfoArrays[i].userNickName)) == keccak256(abi.encodePacked(_userNickName))) {
+                wallet = userInfoArrays[i].walletAddresses;
+                break;
+            }
+        }
+        return wallet;
     }
     
     function getInviter(string calldata _userNickName) public view returns (string memory) {
@@ -249,26 +264,39 @@ contract PresaleReferral is Ownable {
         string memory inviteeList = string(b);
         return inviteeList;
     }
-
-    function buyPresale(address inviter) public payable {
+    
+    function buyPresale(string calldata _userNickName) public payable {
         require(presaleStatus == true, "Presale : Presale is finished");
+        require(keccak256(abi.encodePacked(_userNickName)) != keccak256(abi.encodePacked("")), "USER NICKNAME CAN'T BE EMPTY");
         require(msg.value >= 1 * 1e17, "Presale : Unsuitable Amount");
         require(msg.value <= 2 * 1e18, "Presale : Unsuitable Amount");
 
         uint256 tokenAmount = msg.value.mul(tokenPricePerBNB).div(1e18);
-        uint256 tokenForInviter = tokenAmount.mul(referralFeePercent).div(100);
-        uint256 tokenForBuyer = tokenAmount - tokenForInviter;
+        require(tokenAmount > 0, "Presale : Token aomunt for Buyer must be greate than 0");
         
-        require(tokenForInviter > 0, "Presale : Token aomunt for inviter must be greater than 0");
-        require(tokenForBuyer > 0, "Presale : Token aomunt for Buyer must be greate than 0");
-
-        token.transfer(inviter, tokenForInviter);
-        token.transfer(msg.sender, tokenForBuyer);
+        string memory inviter = getInviter(_userNickName);
+        if (keccak256(abi.encodePacked(inviter)) != keccak256(abi.encodePacked(""))) {
+            address inviteWallet;
+            for (uint i = 0; i < userInfoArrays.length; i++) {
+                if (keccak256(abi.encodePacked(userInfoArrays[i].userNickName)) == keccak256(abi.encodePacked(inviter))) {
+                    inviteWallet = userInfoArrays[i].walletAddresses[userInfoArrays[i].walletAddresses.length - 1];
+                    break;
+                }
+            }
+            uint256 tokenForInviter = tokenAmount.mul(referralFeePercent).div(100);
+            token.transfer(inviteWallet, tokenForInviter);
+            
+            uint256 tokenForBuyer = tokenAmount - tokenForInviter;
+            token.transfer(msg.sender, tokenForBuyer);
+        } else {
+            token.transfer(msg.sender, tokenAmount);
+        }
         
         totalDepositedBNBBalance = totalDepositedBNBBalance.add(msg.value);
         deposits[msg.sender] = deposits[msg.sender].add(msg.value);
         emit Deposited(msg.sender, msg.value);
     }
+
     
     function releaseFunds() external onlyOwner {
         require(presaleStatus == false, "Presale : Presale is in progress");
