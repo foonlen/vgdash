@@ -171,6 +171,13 @@ contract PresaleReferral is Ownable {
 
     string public baseUrl = "https://virgo.fund/r?ref=";
     
+    struct userInfo {
+      string userNickName;
+      string inviterNickName;
+      address[] walletAddresses;
+    }
+    userInfo[] userInfoArrays;
+    
     mapping(address => uint256) public deposits;
 
     constructor(TRUSTMOON _token) public {
@@ -189,6 +196,24 @@ contract PresaleReferral is Ownable {
     
     function balanceOf(address account) public view returns (uint256) {
         return token.balanceOf(account);
+    }
+    
+    function saveUser(string calldata _userNickName, string calldata _inviterNickName) external onlyOwner returns (bool) {
+        userInfo memory user;
+        user.userNickName = _userNickName;
+        user.inviterNickName = _inviterNickName;
+        userInfoArrays.push(user);
+        userInfoArrays[userInfoArrays.length - 1].walletAddresses.push(msg.sender);
+        return true;
+    }
+    
+    function existUser(string calldata _userNickName) public view returns (bool) {
+        for (uint i = 0; i < userInfoArrays.length; i++) {
+            if (keccak256(abi.encodePacked(userInfoArrays[i].userNickName)) == keccak256(abi.encodePacked(_userNickName))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     function buyPresale(address inviter) public payable {
