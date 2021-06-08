@@ -198,7 +198,7 @@ contract PresaleReferral is Ownable {
         return token.balanceOf(account);
     }
     
-    function saveUser(string calldata _userNickName, string calldata _inviterNickName) external onlyOwner returns (bool) {
+    function saveUser(string calldata _userNickName, string calldata _inviterNickName) external returns (bool) {
         userInfo memory user;
         user.userNickName = _userNickName;
         user.inviterNickName = _inviterNickName;
